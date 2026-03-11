@@ -2,7 +2,7 @@
 import React from 'react';
 import svgPaths from "@/imports/svg-au4lahkmtd";
 import svgPathsMobile from "@/imports/svg-lc1fofjioj";
-import { BetOfTheDayCard } from './BetOfTheDayCard';
+import  BetOfTheDayCard  from './BetOfTheDayCard';
 
 // Placeholder image for La Liga logo
 const imgLaLiga = "https://images.unsplash.com/photo-1628936274131-de999fec20dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGFuaXNoJTIwZm9vdGJhbGwlMjBsZWFndWUlMjBsb2dvJTIwc29jY2VyfGVufDF8fHx8MTc3MTgzNzEzMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
