@@ -1,0 +1,95 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* SLICK UI ADJUSTMENTS */
+  --font-size: 14px; /* Reduced from 16px for a more professional 'pro' feel */
+  --radius: 2rem;    /* Increased for pill-shaped 'slick' buttons and cards */
+  
+  --background: #0a0c1a; /* Deeper midnight blue for the banker/fintech vibe */
+  --foreground: oklch(0.985 0 0);
+  --card: #121629;
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #389C52; /* Banker Green */
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 255, 255, 0.05);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.08);
+  --muted-foreground: #94a3b8;
+  --accent: rgba(56, 156, 82, 0.15);
+  --accent-foreground: #389C52;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: transparent;
+  --input-background: rgba(255, 255, 255, 0.03);
+  
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #389C52;
+}
+
+/* Inherit the same dark theme logic but keep the banker blue-dark palette */
+.dark {
+  --background: #03040b;
+  --card: #0a0c1a;
+  --border: rgba(255, 255, 255, 0.05);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+}
+
+@layer base {
+  * {
+    @apply border-border/50 outline-none transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01";
+  }
+}
+
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      @apply text-3xl font-bold tracking-tight mb-2;
+    }
+
+    h2 {
+      @apply text-xl font-semibold tracking-tight mb-1;
+    }
+
+    h3 {
+      @apply text-lg font-medium tracking-tight;
+    }
+
+    /* Slick inputs and buttons global styling */
+    button, input {
+      @apply transition-all duration-300 ease-in-out active:scale-[0.98];
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
