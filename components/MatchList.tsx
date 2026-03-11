@@ -10,6 +10,7 @@ export interface NormalizedMatch {
   id: number;
   date: string;
   status: any;
+  goals: any;
   leagueId: number;
   leagueName: string;
   leagueCountry: string;
