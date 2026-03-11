@@ -406,6 +406,7 @@ export async function getMatchesWithOdds(date: string) {
   );
 
   if (!fixturesRes.ok) {
+    console.log({ fixturesRes });
     throw new Error("Fixtures fetch failed");
   }
 
